@@ -8,6 +8,12 @@ Detailed rules for folder organization, commit formatting, pre-commit workflow, 
 
 ### When to Create New Folders
 
+#### 2-Project-Ideas/
+- **Purpose** — Track project opportunities before becoming active projects
+- **Template-first** — Create entries with `[[_templates/project-idea]]`
+- **Review cadence** — Every weekly review, update `status`, `score`, and `next_review`
+- **Promotion rule** — Move to `2-Projects/` only when problem, value, owner, and next action are clear
+
 #### 2-Projects/
 - **One folder per project** — `2-Projects/<project-name>/`
 - **Never nest projects** — Each project is a peer
@@ -53,12 +59,17 @@ If it fails any check, it belongs somewhere else (project, area, or archive).
 #### 0-Inbox/
 - **Keep flat** — No subfolders
 - **Default landing zone** — When in doubt, capture here first
+- **Use inbox template** — Prefer `[[_templates/inbox-item]]` for standardized frontmatter
 - **Process regularly** — Items shouldn't live here longer than one triage cycle
+- **Action-based routing** — Each note can declare `action_type` and route by glossary
+  - Glossary source: `4-Resources/system/action-glossary.md`
+  - If `action_type` is missing/unknown, route with `normal`
 - **Triage destination checklist:** For each item, ask in order:
-  1. Does it belong to an active project? → Move to project
-  2. Does it belong to an area? → Move to area
-  3. Is it reference material I'll look up again? → Move to `4-Resources/`
-  4. Is it a one-off note? → Link from daily note, then archive
+  1. Is `action_type` set and valid? → Apply glossary workflow
+  2. Does it belong to an active project? → Move to project
+  3. Does it belong to an area? → Move to area
+  4. Is it reference material I'll look up again? → Move to `4-Resources/`
+  5. Is it a one-off note? → Link from daily note, then archive
 
 #### 1-Daily/
 - **Always flat** — No subfolders
