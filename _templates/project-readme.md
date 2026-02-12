@@ -26,6 +26,8 @@ tags: []
 ## Key Links
 
 - [[tasks]] — Current backlog and sprint
+- [[board]] — Kanban board (Inbox → Done)
+- [[roadmap]] — Fases, hitos y checkpoints
 - [[decisions]] — Architectural decisions
 - [[ideas]] — Brainstorming
 

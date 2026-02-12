@@ -15,6 +15,7 @@ Cada nota puede declarar `action_type` en frontmatter.
 1. Si `action_type` está vacío o no coincide con una acción registrada, usar `normal`.
 2. Al procesar, registrar en la nota diaria qué ruta se aplicó.
 3. Evitar acciones ambiguas: una nota debe tener una intención principal.
+4. Si `action_type = board-update`, se debe identificar `project_ref` y actualizar el Kanban del proyecto.
 
 ## Acciones disponibles
 
@@ -26,6 +27,7 @@ Cada nota puede declarar `action_type` en frontmatter.
 | `resource` | Material de consulta | `4-Resources/` | Convertir en nota de recurso con tags y enlaces. |
 | `decision` | Requiere elección explícita | `decisions.md` de proyecto o área | Registrar opciones, decisión y criterio. |
 | `incubate` | Interesante, sin prioridad actual | `2-Project-Ideas/` con estado `incubating` | Guardar con próxima revisión (7-30 días). |
+| `board-update` | Actividad de proyecto que debe impactar tablero | `board.md` + `tasks.md` del proyecto | Refinar, priorizar y mover a `Inbox` o `Backlog` del Kanban por proyecto. |
 
 ## Ejemplo de frontmatter para inbox
 

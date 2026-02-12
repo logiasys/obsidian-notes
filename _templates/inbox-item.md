@@ -4,6 +4,8 @@ created: "{{date:YYYY-MM-DD HH:mm}}"
 action_type: "normal"
 status: "captured"
 source: "quick-capture"
+project_ref: ""
+priority_hint: ""
 ---
 
 # Inbox — {{title}}
@@ -14,6 +16,7 @@ source: "quick-capture"
 ## Contexto
 - Proyecto/área relacionado (si aplica): 
 - Señales de urgencia: 
+- Tipo sugerido (`bug`/`feature`/`research`/`ops`): 
 
 ## Siguiente paso sugerido
 - 
