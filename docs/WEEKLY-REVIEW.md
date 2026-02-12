@@ -40,7 +40,10 @@ For each active project in `2-Projects/`:
   - 🟡 In Progress → Is it actually progressing?
   - 🟢 Active → Good to go
 - [ ] Is `tasks.md` up to date?
+- [ ] Is `board.md` up to date (Kanban states reflect reality)?
+- [ ] Is `roadmap.md` aligned with current phase/milestones?
 - [ ] Any stale tasks (not touched in 7+ days)?
+- [ ] Any `#critical` cards blocked for 7+ days? Escalate in project README.
 - [ ] Should this project be archived?
 
 **Red flags:**
@@ -162,7 +165,8 @@ Copy this to your daily note on review day:
 
 ### Projects
 - [ ] Update status emojis
-- [ ] Check for stale tasks
+- [ ] Sync tasks.md + board.md + roadmap.md
+- [ ] Check stale tasks and blocked critical cards
 - [ ] Archive completed projects
 
 ### Daily Note Archival

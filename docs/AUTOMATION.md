@@ -9,7 +9,7 @@ Set up scheduled tasks to maintain your vault automatically.
 | Time | Job | What It Does |
 |------|-----|--------------|
 | 8am daily | Morning Briefing | Creates daily note, summarizes yesterday |
-| Every 6h | Inbox Processing | Triages items in 0-Inbox/ |
+| Every 6h | Inbox Processing | Triages items in 0-Inbox/ and updates project boards |
 | 11pm daily | Evening Sync | Reviews day, commits to GitHub |
 | Sunday 6pm | Weekly Review | Deep clean, archive, synthesize |
 
@@ -166,6 +166,23 @@ fi
 # Run nightly at 11:30pm
 30 23 * * * /path/to/scripts/auto-commit.sh /path/to/vault
 ```
+
+---
+
+
+## Inbox + Board Automation Rules
+
+When running inbox processing (manual or scheduled):
+
+1. Resolve `action_type` using `4-Resources/system/action-glossary.md`
+2. If item references a project (`project_ref` or text context), update that project:
+   - `tasks.md` (text source of truth)
+   - `board.md` (Kanban visual state)
+   - `roadmap.md` (phase/milestone impact if relevant)
+3. Use this board flow: `Inbox` → `Backlog` → `This Week` → `In Progress` → `Review` → `Done`
+4. Mark critical cards with `#critical`; blocked work goes to `Blocked` with explicit reason
+
+Use the `obsidian-agile-task-notes` plugin format for `board.md` (repo: `BoxThatBeat/obsidian-agile-task-notes`).
 
 ---
 

@@ -58,6 +58,8 @@ git clone https://github.com/YOUR_USERNAME/clawdnotes-template ~/Notes
 - 📁 PARA organization keeps things findable
 - 🔗 Wikilinks connect everything
 - 📋 Project structure with README/tasks/decisions/ideas
+- 🗂️ Agile board per project (obsidian-agile-task-notes) with criticality and delivery flow
+- 🛣️ Project roadmap + weekly criticality tracking
 - 🧪 Project idea pipeline (`2-Project-Ideas/`) to mature opportunities before execution
 - 🚀 Feature workflow: idea → PRD → DEV_PLAN → implementation
 - 🗄️ Clear archival process
@@ -100,6 +102,7 @@ git clone https://github.com/YOUR_USERNAME/clawdnotes-template ~/Notes
 | [AI-WORKSPACE-GUIDE.md](docs/AI-WORKSPACE-GUIDE.md) | Complete setup for AI-assisted development |
 | [FEATURE-WORKFLOW.md](docs/FEATURE-WORKFLOW.md) | Feature development: idea → PRD → DEV_PLAN → implementation |
 | [AUTOMATION.md](docs/AUTOMATION.md) | Setting up cron jobs and scheduled tasks |
+| [PROJECT-TRACKING-BOARD.md](docs/PROJECT-TRACKING-BOARD.md) | Kanban board workflow, plugin setup, roadmap tracking |
 | [WEEKLY-REVIEW.md](docs/WEEKLY-REVIEW.md) | Weekly review process and maintenance |
 | [QUALITY-IMPROVEMENTS.md](docs/QUALITY-IMPROVEMENTS.md) | Recommended quality and admin upgrades for scaling the vault |
 

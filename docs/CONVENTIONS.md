@@ -17,7 +17,7 @@ Detailed rules for folder organization, commit formatting, pre-commit workflow, 
 #### 2-Projects/
 - **One folder per project** — `2-Projects/<project-name>/`
 - **Never nest projects** — Each project is a peer
-- **Use internal structure** — README, tasks, decisions, ideas, notes/
+- **Use internal structure** — README, tasks, board, roadmap, decisions, ideas, notes/
 - **Minimum:** A project must have deliverable(s) and an end state
 
 #### 3-Areas/
@@ -78,6 +78,18 @@ If it fails any check, it belongs somewhere else (project, area, or archive).
 #### 5-Archive/
 - **Mirror the live structure** — `5-Archive/2-Projects/`, etc.
 - Move entire folders when archiving
+
+
+### Project tracking standard (Kanban + roadmap)
+
+Each active project should include:
+- `board.md` en formato agile board (plugin: `obsidian-agile-task-notes`)
+- `roadmap.md` with current phase, milestones, and risks
+
+Tracking rules:
+1. New work from inbox enters `board.md` (`Inbox` or `Backlog`) and `tasks.md`
+2. Weekly review must reconcile `tasks.md`, `board.md`, and `roadmap.md`
+3. Tasks tagged `#critical` blocked for 7+ days must be escalated in `README.md`
 
 ### Folder Creation Checklist
 
