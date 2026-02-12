@@ -12,6 +12,7 @@ See `CONTEXT.md` for current vault state (auto-updated by /sync).
 ```
 0-Inbox/        → Quick capture, unprocessed items
 1-Daily/        → Daily notes (YYYY-MM-DD.md)
+2-Project-Ideas/→ Pipeline of potential projects
 2-Projects/     → Active projects with deliverables
 3-Areas/        → Ongoing responsibilities (no end date)
 4-Resources/    → Reference material, topics of interest
@@ -34,6 +35,8 @@ Every note MUST have YAML frontmatter. The `type` field is required.
 | `decision` | `type`, `status`, `created`, `project` | `tags` |
 | `tasks` | `type`, `project` | |
 | `ideas` | `type`, `project` | |
+| `inbox` | `type`, `created` | `action_type`, `status`, `source` |
+| `project-idea` | `type`, `created`, `status` | `score`, `owner`, `next_review` |
 | `resource` | `type`, `created`, `updated` | `tags`, `related` |
 
 **`status` values:** `active`, `proposed`, `accepted`, `complete`, `archived`, `deprecated`
@@ -116,14 +119,23 @@ When user says "capture: <text>", route using this priority order (first match w
 
 1. **Belongs to an active project?** → Add to that project's `tasks.md`, `ideas.md`, or `notes/`
 2. **Belongs to an active area?** → Add to that area's folder in `3-Areas/`
-3. **Task with no clear project** → Add to `0-Inbox/` with `#task`
+3. **Task with no clear project** → Add to `0-Inbox/` with `action_type: task`
 4. **Idea** → Add to daily note Ideas section with `#idea`
-5. **Project concept** → Discuss, then create in `2-Projects/` if confirmed
-6. **Everything else** → Add to `0-Inbox/`
+5. **Project concept** → Add to `0-Inbox/` with `action_type: project-seed` and triage to `2-Project-Ideas/`
+6. **Everything else** → Add to `0-Inbox/` with `action_type: normal`
 
 **Inbox is the default.** Only create in `4-Resources/` during inbox processing (not during capture) when an item is confirmed reference material that doesn't belong to any project or area.
 
 **Never skip the Inbox for references.** Links, articles, and notes that aren't clearly tied to a project/area go to `0-Inbox/` first — they get triaged to `4-Resources/` later during inbox processing.
+
+### Inbox Processing by Action Glossary
+
+Inbox items can include `action_type` frontmatter (using `[[_templates/inbox-item]]`).
+
+- Canonical glossary: `4-Resources/system/action-glossary.md`
+- If `action_type` is missing or unknown, default to `normal`
+- Use `project-seed` or `incubate` to route items into `2-Project-Ideas/`
+- Keep `2-Projects/` reserved for active execution only
 
 ### Session Handoff
 At end of work sessions, update daily note "🤖 AI Sync":

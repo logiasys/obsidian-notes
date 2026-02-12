@@ -31,6 +31,7 @@ git clone https://github.com/YOUR_USERNAME/clawdnotes-template ~/Notes
 .
 ├── 0-Inbox/           # Quick capture, unprocessed items
 ├── 1-Daily/           # Daily notes (YYYY-MM-DD.md)
+├── 2-Project-Ideas/   # Pipeline of potential projects (pre-project)
 ├── 2-Projects/        # Active projects with deliverables
 │   └── <project>/
 │       ├── README.md, tasks.md, decisions.md, ideas.md
@@ -57,6 +58,7 @@ git clone https://github.com/YOUR_USERNAME/clawdnotes-template ~/Notes
 - 📁 PARA organization keeps things findable
 - 🔗 Wikilinks connect everything
 - 📋 Project structure with README/tasks/decisions/ideas
+- 🧪 Project idea pipeline (`2-Project-Ideas/`) to mature opportunities before execution
 - 🚀 Feature workflow: idea → PRD → DEV_PLAN → implementation
 - 🗄️ Clear archival process
 
@@ -72,7 +74,21 @@ git clone https://github.com/YOUR_USERNAME/clawdnotes-template ~/Notes
 2. **Open in Obsidian** (File → Open Vault)
 3. **Create your first daily note**: `1-Daily/YYYY-MM-DD.md` using the template
 4. **Start capturing**: Add thoughts to `0-Inbox/` or directly to your daily note
-5. **Set up automation** (optional): See [AUTOMATION.md](docs/AUTOMATION.md)
+5. **Use Inbox template**: Set `action_type` (`normal`, `task`, `project-seed`, etc.) to route processing behavior
+6. **Set up automation** (optional): See [AUTOMATION.md](docs/AUTOMATION.md)
+
+## New: Action-Based Inbox Processing
+
+- Use `[[_templates/inbox-item]]` for all new inbox captures.
+- Define `action_type` in frontmatter to indicate processing path.
+- Supported actions are documented in [`4-Resources/system/action-glossary.md`](4-Resources/system/action-glossary.md).
+- If no action is set, the inbox processor defaults to `normal` flow.
+
+## New: Project Ideas (outside active projects)
+
+- Capture project opportunities in `2-Project-Ideas/` with `[[_templates/project-idea]]`.
+- Promote an idea to `2-Projects/` only after basic validation (problem, value, owner, next action).
+- This keeps execution projects clean while preserving strategic exploration.
 
 ## Documentation
 
@@ -85,6 +101,7 @@ git clone https://github.com/YOUR_USERNAME/clawdnotes-template ~/Notes
 | [FEATURE-WORKFLOW.md](docs/FEATURE-WORKFLOW.md) | Feature development: idea → PRD → DEV_PLAN → implementation |
 | [AUTOMATION.md](docs/AUTOMATION.md) | Setting up cron jobs and scheduled tasks |
 | [WEEKLY-REVIEW.md](docs/WEEKLY-REVIEW.md) | Weekly review process and maintenance |
+| [QUALITY-IMPROVEMENTS.md](docs/QUALITY-IMPROVEMENTS.md) | Recommended quality and admin upgrades for scaling the vault |
 
 ## Customization
 
